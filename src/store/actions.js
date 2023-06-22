@@ -1,4 +1,7 @@
 import axios from 'axios';
+import { dataFetch } from './customHooks/useFetch';
+
+
 //demo component
 export function demo() {
     return {
@@ -33,5 +36,13 @@ export function getAllProducts(){
         .catch((e)=>{
             console.log(e)
         })
+    }
+}
+
+//any api data
+export function getData(url){
+    return (dispatch)=>{
+        const apiData = dataFetch(dispatch, url, 'GETDATA');
+        return apiData
     }
 }
