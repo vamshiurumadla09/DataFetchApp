@@ -1,11 +1,16 @@
 const initialState = {
-    data:'enter url and get data'
+    data:'',
+    demoURLs:{
+        title:'Demo ApiUrl',
+        productApi:'https://fakestoreapi.com/products',
+        countriesApi:'https://restcountries.com/v2/all'
+    }
 }
 
 function DataFetchReducer (state=initialState, action){
     switch (action.type) {
         case 'GETDATA':
-            return {...state, data:action.payload}
+            return {...state, data:action.payload, demoURLs:{ title:'', productApi:'', countriesApi:''}}
         default:
             return {...state}
     }
